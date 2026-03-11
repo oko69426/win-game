@@ -105,7 +105,8 @@ function RingProgress({ pct, size = 120, color = '#0066FF', label, sublabel }) {
     return () => obs.disconnect();
   }, [pct]);
   return (
-    <Box ref={ref} display="flex" flexDirection="column" alignItems="center" gap={1.5}>
+    <Box ref={ref} display="flex" flexDirection="column" alignItems="center" gap={1.5}
+      sx={{ transform: { xs: 'scale(0.82)', sm: 'scale(1)' }, transformOrigin: 'top center' }}>
       <Box position="relative" width={size} height={size}>
         <svg width={size} height={size} style={{ transform: 'rotate(-90deg)' }}>
           <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth={8}/>
@@ -118,8 +119,8 @@ function RingProgress({ pct, size = 120, color = '#0066FF', label, sublabel }) {
         </Box>
       </Box>
       <Box textAlign="center">
-        <Typography variant="body2" fontWeight={700} color="white">{label}</Typography>
-        {sublabel && <Typography variant="caption" color="text.secondary">{sublabel}</Typography>}
+        <Typography variant="body2" fontWeight={700} color="white" sx={{ fontSize: { xs: '0.8rem', sm: '0.875rem' } }}>{label}</Typography>
+        {sublabel && <Typography variant="caption" color="text.secondary" sx={{ fontSize: { xs: '0.65rem', sm: '0.75rem' } }}>{sublabel}</Typography>}
       </Box>
     </Box>
   );

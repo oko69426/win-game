@@ -79,7 +79,7 @@ export default function UploadZone({ onResult }) {
       onResult(data);
 
     } catch (err) {
-      setError(err.message || '網路連線失敗，請確認後端服務已啟動 (port 5000)');
+      setError(err.message || '網路連線失敗，請稍後再試');
     } finally {
       setLoading(false);
     }
@@ -138,7 +138,7 @@ export default function UploadZone({ onResult }) {
           border: `2px dashed`,
           borderColor: dragging ? '#0066FF' : 'rgba(0,102,255,0.2)',
           borderRadius: 3,
-          p: 5,
+          p: { xs: 3, md: 5 },
           textAlign: 'center',
           cursor: loading ? 'default' : 'pointer',
           transition: 'all 0.3s ease',
@@ -178,12 +178,12 @@ export default function UploadZone({ onResult }) {
           </Box>
         ) : (
           <>
-            <CloudUploadIcon sx={{ fontSize: 64, color: 'primary.main', mb: 2, opacity: 0.8 }} />
-            <Typography variant="h6" mb={1}>
-              拖拽截圖到此處
+            <CloudUploadIcon sx={{ fontSize: { xs: 48, md: 64 }, color: 'primary.main', mb: 2, opacity: 0.8 }} />
+            <Typography variant="h6" mb={1} sx={{ fontSize: { xs: '1rem', md: '1.25rem' } }}>
+              點擊上傳截圖
             </Typography>
-            <Typography variant="body2" color="text.secondary" mb={2}>
-              或點擊選擇檔案
+            <Typography variant="body2" color="text.secondary" mb={2} sx={{ display: { xs: 'none', md: 'block' } }}>
+              或將截圖拖拽到此處
             </Typography>
             <Box display="flex" gap={1} justifyContent="center">
               <Chip label="PNG" size="small" variant="outlined" />
