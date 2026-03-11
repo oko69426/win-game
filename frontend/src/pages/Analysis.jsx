@@ -8,7 +8,6 @@ import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import LanguageIcon from '@mui/icons-material/Language';
-import SearchIcon from '@mui/icons-material/Search';
 import HdIcon from '@mui/icons-material/Hd';
 
 import UploadZone from '../components/UploadZone';
