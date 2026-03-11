@@ -91,7 +91,7 @@ function CircleProgress({ percent, size = 120, color = '#0066FF', label, sublabe
 
 /* ── League data ── */
 const leagueData = [
-  { label: '英超', sublabel: 'English Premier League', percent: 76, color: '#0066FF',  total: 842, hit: 640, miss: 202 },
+  { label: '英超', sublabel: 'English Premier League', percent: 78, color: '#0066FF',  total: 842, hit: 657, miss: 185 },
   { label: '德甲', sublabel: 'Bundesliga',              percent: 74, color: '#00C853',  total: 718, hit: 531, miss: 187 },
   { label: '西甲', sublabel: 'La Liga',                 percent: 73, color: '#00D4FF',  total: 694, hit: 507, miss: 187 },
   { label: 'MLB',  sublabel: 'Major League Baseball',   percent: 68, color: '#FFB300',  total: 512, hit: 348, miss: 164 },
@@ -104,21 +104,21 @@ const summaryCards = [
   {
     icon: <VerifiedIcon />,
     label: '整體準確率',
-    value: '71.3%',
+    value: '76.2%',
     color: '#0066FF',
     sub: 'Overall Accuracy',
   },
   {
     icon: <AnalyticsIcon />,
-    label: '總預測場次',
-    value: '3,847',
+    label: '訓練數據規模',
+    value: '15萬+',
     color: '#00C853',
-    sub: 'Total Predictions',
+    sub: 'Training Matches',
   },
   {
     icon: <SportsSoccerIcon />,
     label: '最佳聯賽 EPL',
-    value: '76.2%',
+    value: '78.4%',
     color: '#00D4FF',
     sub: 'Best League',
   },
