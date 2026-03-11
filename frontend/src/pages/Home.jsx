@@ -437,7 +437,7 @@ export default function Home() {
                 animation: `${pulseDot} 1.6s ease-in-out infinite`,
               }} />
               <Typography variant="caption" sx={{ color: '#00D4FF', fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.78rem' }}>
-                LIVE &nbsp;·&nbsp; 命中率 76%+ &nbsp;·&nbsp; 15萬場數據驗證
+                LIVE &nbsp;·&nbsp; 命中率 71%+ &nbsp;·&nbsp; 15萬場數據驗證
               </Typography>
             </Box>
           </Box>
@@ -522,7 +522,7 @@ export default function Home() {
           {/* Trust badges */}
           <Box display="flex" gap={1.5} justifyContent="center" flexWrap="wrap" mb={2}>
             {[
-              { Icon: WorkspacePremiumIcon, label: '命中率 76%+', highlight: true },
+              { Icon: WorkspacePremiumIcon, label: '命中率 71%+', highlight: true },
               { Icon: SpeedIcon, label: '30秒出結果' },
               { Icon: LockIcon, label: '15萬場數據' },
             ].map(({ Icon, label, highlight }) => (

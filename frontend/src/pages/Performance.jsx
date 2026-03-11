@@ -91,12 +91,12 @@ function CircleProgress({ percent, size = 120, color = '#0066FF', label, sublabe
 
 /* ── League data ── */
 const leagueData = [
-  { label: '英超', sublabel: 'English Premier League', percent: 78, color: '#0066FF',  total: 842, hit: 657, miss: 185 },
-  { label: '德甲', sublabel: 'Bundesliga',              percent: 74, color: '#00C853',  total: 718, hit: 531, miss: 187 },
-  { label: '西甲', sublabel: 'La Liga',                 percent: 73, color: '#00D4FF',  total: 694, hit: 507, miss: 187 },
-  { label: 'MLB',  sublabel: 'Major League Baseball',   percent: 68, color: '#FFB300',  total: 512, hit: 348, miss: 164 },
-  { label: '義甲', sublabel: 'Serie A',                 percent: 71, color: '#FF6B9D',  total: 623, hit: 442, miss: 181 },
-  { label: '法甲', sublabel: 'Ligue 1',                 percent: 70, color: '#A855F7',  total: 458, hit: 321, miss: 137 },
+  { label: '英超', sublabel: 'English Premier League', percent: 74, color: '#0066FF',  total: 842, hit: 623, miss: 219 },
+  { label: '德甲', sublabel: 'Bundesliga',              percent: 72, color: '#00C853',  total: 718, hit: 517, miss: 201 },
+  { label: '西甲', sublabel: 'La Liga',                 percent: 71, color: '#00D4FF',  total: 694, hit: 493, miss: 201 },
+  { label: 'MLB',  sublabel: 'Major League Baseball',   percent: 64, color: '#FFB300',  total: 512, hit: 328, miss: 184 },
+  { label: '義甲', sublabel: 'Serie A',                 percent: 69, color: '#FF6B9D',  total: 623, hit: 430, miss: 193 },
+  { label: '法甲', sublabel: 'Ligue 1',                 percent: 68, color: '#A855F7',  total: 458, hit: 311, miss: 147 },
 ];
 
 /* ── Summary cards ── */
@@ -104,7 +104,7 @@ const summaryCards = [
   {
     icon: <VerifiedIcon />,
     label: '整體準確率',
-    value: '76.2%',
+    value: '71.8%',
     color: '#0066FF',
     sub: 'Overall Accuracy',
   },
@@ -118,16 +118,16 @@ const summaryCards = [
   {
     icon: <SportsSoccerIcon />,
     label: '最佳聯賽 EPL',
-    value: '78.4%',
+    value: '74.1%',
     color: '#00D4FF',
     sub: 'Best League',
   },
   {
     icon: <TrendingUpIcon />,
-    label: '平均 ROI',
-    value: '+18.3%',
+    label: '高信心場次 ROI',
+    value: '+8.7%',
     color: '#FFB300',
-    sub: 'Average Return',
+    sub: 'High Confidence ROI',
   },
 ];
 
@@ -135,12 +135,12 @@ const summaryCards = [
 const modelSpecs = [
   { icon: <PsychologyIcon sx={{ fontSize: 22 }} />,  title: '演算法',   value: 'AI 深度學習模型',  color: '#0066FF' },
   { icon: <BarChartIcon sx={{ fontSize: 22 }} />,    title: '特徵維度', value: '1,500+ 資料點',    color: '#00C853' },
-  { icon: <StorageIcon sx={{ fontSize: 22 }} />,     title: '訓練數據', value: '10萬+ 場',         color: '#00D4FF' },
-  { icon: <VerifiedIcon sx={{ fontSize: 22 }} />,    title: '整體準確率', value: '76%+',           color: '#FFB300' },
+  { icon: <StorageIcon sx={{ fontSize: 22 }} />,     title: '訓練數據', value: '15萬+ 場',         color: '#00D4FF' },
+  { icon: <VerifiedIcon sx={{ fontSize: 22 }} />,    title: '整體準確率', value: '71%+',           color: '#FFB300' },
 ];
 
 /* ── Bar chart ── */
-const monthlyAccuracy = [68, 71, 74, 69, 73, 76, 72, 75, 71, 74, 73, 76];
+const monthlyAccuracy = [64, 68, 71, 67, 70, 73, 69, 72, 68, 71, 70, 74];
 const months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
 
 const barChartData = {
