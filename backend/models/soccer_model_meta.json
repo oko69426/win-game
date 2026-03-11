@@ -1,0 +1,31 @@
+{
+  "total_matches": 1752,
+  "training_samples": 1510,
+  "accuracy": 0.4867549668874172,
+  "competitions": [
+    "英超",
+    "德甲",
+    "西甲",
+    "義甲",
+    "法甲"
+  ],
+  "seasons": [
+    2022,
+    2023
+  ],
+  "feature_columns": [
+    "home_win_rate",
+    "home_form_points",
+    "home_avg_goals_scored",
+    "home_avg_goals_conceded",
+    "home_draw_rate",
+    "away_win_rate",
+    "away_form_points",
+    "away_avg_goals_scored",
+    "away_avg_goals_conceded",
+    "away_draw_rate",
+    "h2h_home_win_rate",
+    "h2h_draw_rate"
+  ],
+  "data_source": "football-data.org (real matches)"
+}

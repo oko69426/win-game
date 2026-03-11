@@ -1,0 +1,25 @@
+# WINGAME AI 後端依賴套件
+# 安裝指令: pip install -r requirements.txt
+
+# Web 框架
+flask==3.0.3
+flask-cors==4.0.1
+
+# OCR - 首次執行會下載語言模型 (約 1.5GB，需要等待)
+easyocr==1.7.1
+
+# 機器學習
+xgboost==2.0.3
+scikit-learn==1.4.2
+numpy==1.26.4
+pandas==2.2.1
+
+# 圖片處理 (EasyOCR 依賴)
+Pillow==10.3.0
+opencv-python-headless==4.9.0.80
+
+# HTTP 請求 (呼叫體育 API)
+requests==2.31.0
+
+# 環境變數
+python-dotenv==1.0.1

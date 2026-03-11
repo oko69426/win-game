@@ -1,0 +1,21 @@
+# Node
+frontend/node_modules
+frontend/.env.local
+frontend/.env.development.local
+
+# Python
+backend/__pycache__
+backend/**/__pycache__
+backend/*.pyc
+backend/.env
+**/*.pyc
+**/__pycache__
+
+# Git
+.git
+.gitignore
+
+# Misc
+*.md
+.DS_Store
+*.bat
