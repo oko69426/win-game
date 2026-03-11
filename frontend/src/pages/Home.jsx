@@ -597,9 +597,9 @@ export default function Home() {
       }}>
         <Box sx={{ maxWidth: 900, mx: 'auto', px: { xs: 2, md: 4 } }}>
           <Grid container spacing={{ xs: 1.5, md: 2 }}>
-            <Grid item xs={6} md={3}><StatCard target={95} suffix="%" label="AI賽前準確率" sublabel="深度學習模型" color="#0066FF" icon={<TrendingUpIcon />}/></Grid>
+            <Grid item xs={6} md={3}><StatCard target={76} suffix="%+" label="整體命中率" sublabel="回測 3,800+ 場" color="#0066FF" icon={<TrendingUpIcon />}/></Grid>
             <Grid item xs={6} md={3}><StatCard target={157} suffix="K+" label="歷史訓練賽事" sublabel="跨越 19 個聯賽" color="#00C853" icon={<AnalyticsIcon />}/></Grid>
-            <Grid item xs={6} md={3}><StatCard target={88} suffix="%" label="高勝率推薦" sublabel="精選最佳組合" color="#00D4FF" icon={<AutoAwesomeIcon />}/></Grid>
+            <Grid item xs={6} md={3}><StatCard target={850} suffix="" label="累積利潤單位" sublabel="模型上線至今" color="#00D4FF" icon={<AutoAwesomeIcon />} display="+850"/></Grid>
             <Grid item xs={6} md={3}><StatCard target={30} label="預測耗時" sublabel="毫秒級模型推理" color="#FFB300" icon={<SpeedIcon />} display="< 30s"/></Grid>
           </Grid>
         </Box>
@@ -632,6 +632,27 @@ export default function Home() {
         <Typography variant="caption" display="block" textAlign="center" color="text.secondary" mt={4} sx={{ opacity: 0.4 }}>
           * 歷史回測結果，不代表未來表現保證
         </Typography>
+
+        {/* Model spec strip */}
+        <Box sx={{
+          mt: 5, p: { xs: 2, md: 2.5 },
+          borderRadius: '14px',
+          background: 'rgba(0,102,255,0.04)',
+          border: '1px solid rgba(0,102,255,0.12)',
+          display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: { xs: 2, md: 5 },
+        }}>
+          {[
+            { label: '模型版本', value: 'XGBoost v2.0' },
+            { label: '模型迭代', value: '53 次優化' },
+            { label: '每場資料點', value: '1,500+' },
+            { label: '特徵維度', value: '15 維向量' },
+          ].map(({ label, value }) => (
+            <Box key={label} textAlign="center">
+              <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.3)', display: 'block', mb: 0.3, fontSize: '0.68rem', letterSpacing: '0.08em' }}>{label}</Typography>
+              <Typography fontWeight={700} sx={{ color: '#0066FF', fontSize: '0.95rem' }}>{value}</Typography>
+            </Box>
+          ))}
+        </Box>
       </Box>
 
       <Divider sx={{ borderColor: 'rgba(255,255,255,0.05)' }} />
@@ -736,7 +757,7 @@ export default function Home() {
         <Typography variant="h4" textAlign="center" fontWeight={800} mb={2}
           sx={{ fontSize: { xs: '1.6rem', md: '2.125rem' } }}>AI 模型特徵工程</Typography>
         <Typography variant="body2" color="text.secondary" textAlign="center" mb={6} maxWidth={550} mx="auto">
-          系統整合 15 項特徵，包含賠率市場隱含機率 + 歷史統計，訓練超過 15 萬場真實數據
+          系統整合 15 項特徵（含 ELO 評分 + 賠率隱含機率 + 歷史統計），每場分析 1,500+ 資料點，訓練超過 15 萬場真實數據
         </Typography>
         <Grid container spacing={3}>
           {[
@@ -744,6 +765,7 @@ export default function Home() {
             { icon: <TrendingUpIcon />, title: '近期狀態指數', desc: '計算球隊近 25 場比賽的勝率、積分、進球率、失球率，量化當前狀態趨勢', color: '#00C853' },
             { icon: <PsychologyIcon />, title: '歷史交鋒記錄', desc: '分析兩隊近年 12 場交鋒勝負平紀錄，計算主客場交鋒優勢因子', color: '#00D4FF' },
             { icon: <ShieldIcon />, title: '攻守綜合指標', desc: '場均進球 / 失球比率、主客場分開計算，反映真實攻守能力而非整體勝率', color: '#FFB300' },
+            { icon: <TrendingUpIcon />, title: 'ELO 動態評分', desc: '每場比賽後自動更新兩隊 ELO 評分，反映戰力動態變化，比靜態勝率更能捕捉球隊最新狀態', color: '#A855F7' },
           ].map(({ icon, title, desc, color }) => (
             <Grid item xs={12} sm={6} key={title}>
               <Box sx={{
