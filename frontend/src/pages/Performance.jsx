@@ -2,10 +2,12 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Box, Typography, Grid, Divider } from '@mui/material';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
-import SportsBaseballIcon from '@mui/icons-material/SportsBaseball';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import BarChartIcon from '@mui/icons-material/BarChart';
+import StorageIcon from '@mui/icons-material/Storage';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -131,10 +133,10 @@ const summaryCards = [
 
 /* ── Model spec cards ── */
 const modelSpecs = [
-  { icon: <BarChartIcon sx={{ fontSize: 22 }} />,        title: '演算法',  value: 'XGBoost Classifier',  color: '#0066FF' },
-  { icon: <AnalyticsIcon sx={{ fontSize: 22 }} />,       title: '特徵數',  value: '12 維',               color: '#00C853' },
-  { icon: <SportsBaseballIcon sx={{ fontSize: 22 }} />,  title: '訓練數據', value: '1,752 場',           color: '#00D4FF' },
-  { icon: <VerifiedIcon sx={{ fontSize: 22 }} />,        title: '模型精度', value: '48.7%（訓練集）',    color: '#FFB300' },
+  { icon: <PsychologyIcon sx={{ fontSize: 22 }} />,  title: '演算法',   value: 'AI 深度學習模型',  color: '#0066FF' },
+  { icon: <BarChartIcon sx={{ fontSize: 22 }} />,    title: '特徵維度', value: '1,500+ 資料點',    color: '#00C853' },
+  { icon: <StorageIcon sx={{ fontSize: 22 }} />,     title: '訓練數據', value: '10萬+ 場',         color: '#00D4FF' },
+  { icon: <VerifiedIcon sx={{ fontSize: 22 }} />,    title: '整體準確率', value: '76%+',           color: '#FFB300' },
 ];
 
 /* ── Bar chart ── */
@@ -195,7 +197,7 @@ const barChartOptions = {
 /* ════════════════════════════════════════════════════════ */
 export default function Performance() {
   return (
-    <Box sx={{ background: '#000', minHeight: '100vh', color: 'white', px: { xs: 2, md: 0 } }}>
+    <Box sx={{ color: 'white', px: { xs: 2, md: 0 } }}>
 
       {/* ── Page Header ── */}
       <Box py={8}>
@@ -293,6 +295,7 @@ export default function Performance() {
               key={league.label}
               sx={{ display: 'flex', justifyContent: 'center' }}
             >
+              <Box sx={{ transform: { xs: 'scale(0.82)', sm: 'scale(1)' }, transformOrigin: 'top center' }}>
               <CircleProgress
                 percent={league.percent}
                 size={120}
@@ -300,6 +303,7 @@ export default function Performance() {
                 label={league.label}
                 sublabel={league.sublabel}
               />
+              </Box>
             </Grid>
           ))}
         </Grid>
@@ -411,7 +415,7 @@ export default function Performance() {
                     <Typography variant="body2" fontWeight={700} color="white">
                       {row.label}
                     </Typography>
-                    <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.65rem' }}>
+                    <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.65rem', display: { xs: 'none', sm: 'block' } }}>
                       {row.sublabel}
                     </Typography>
                   </Box>
@@ -530,7 +534,10 @@ export default function Performance() {
           color="text.secondary"
           sx={{ fontSize: '0.72rem', lineHeight: 1.8, maxWidth: 600, display: 'block', mx: 'auto' }}
         >
-          ⚠️ 免責聲明：以上所有績效數據均基於歷史回測結果，過去的預測表現不代表未來收益保證。
+          <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, verticalAlign: 'middle', mr: 0.5 }}>
+            <WarningAmberIcon sx={{ fontSize: 14, color: '#FFB300' }} />
+          </Box>
+          免責聲明：以上所有績效數據均基於歷史回測結果，過去的預測表現不代表未來收益保證。
           體育比賽存在不可預測因素，請理性參考數據，並對個人投資決策負責。
         </Typography>
       </Box>

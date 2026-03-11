@@ -8,6 +8,7 @@ import { API_BASE } from '../services/api';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import BalanceIcon from '@mui/icons-material/Balance';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import InboxIcon from '@mui/icons-material/Inbox';
@@ -268,9 +269,12 @@ export default function DailyPicks() {
             資料每次點擊重新整理時更新，不構成投注建議。
           </Typography>
           {data?.demo && (
-            <Typography variant="caption" sx={{ color: '#FFB300', mt: 0.5, display: 'block' }}>
-              ⚠️ 目前為示範模式 — 設定 Football-Data API Key 可取得真實今日賽事
-            </Typography>
+            <Box display="flex" alignItems="flex-start" gap={0.6} mt={0.5}>
+              <WarningAmberIcon sx={{ fontSize: 14, color: '#FFB300', mt: '2px', flexShrink: 0 }} />
+              <Typography variant="caption" sx={{ color: '#FFB300' }}>
+                目前為示範模式 — 設定 Football-Data API Key 可取得真實今日賽事
+              </Typography>
+            </Box>
           )}
         </Box>
       </Box>

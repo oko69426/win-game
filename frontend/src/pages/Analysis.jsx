@@ -6,16 +6,20 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import LanguageIcon from '@mui/icons-material/Language';
+import SearchIcon from '@mui/icons-material/Search';
+import HdIcon from '@mui/icons-material/Hd';
 
 import UploadZone from '../components/UploadZone';
 import ResultDisplay from '../components/ResultDisplay';
 import DisclaimerBanner from '../components/DisclaimerBanner';
 
 const TIPS = [
-  { icon: '📸', title: '包含完整隊名', desc: '截圖需清楚顯示主客隊名稱，格式如「主隊 vs 客隊」' },
-  { icon: '💹', title: '含賠率更準確', desc: '帶有賠率數字（如 1.75 / 3.50）可大幅提升預測精準度' },
-  { icon: '🌐', title: '多語言支援', desc: '支援繁體中文、簡體中文及英文截圖自動辨識' },
-  { icon: '🔍', title: '高解析度優先', desc: '建議 720p 以上，確保文字清晰可讀，OCR 準確率更高' },
+  { icon: <CameraAltIcon sx={{ fontSize: 20 }} />, title: '包含完整隊名', desc: '截圖需清楚顯示主客隊名稱，格式如「主隊 vs 客隊」' },
+  { icon: <ShowChartIcon sx={{ fontSize: 20 }} />, title: '含賠率更準確', desc: '帶有賠率數字（如 1.75 / 3.50）可大幅提升預測精準度' },
+  { icon: <LanguageIcon sx={{ fontSize: 20 }} />,  title: '多語言支援',   desc: '支援繁體中文、簡體中文及英文截圖自動辨識' },
+  { icon: <HdIcon sx={{ fontSize: 20 }} />,        title: '高解析度優先', desc: '建議 720p 以上，確保文字清晰可讀，辨識準確率更高' },
 ];
 
 export default function Analysis() {
@@ -197,7 +201,7 @@ export default function Analysis() {
                   },
                 }}
               >
-                <Typography sx={{ fontSize: '1.6rem', mb: 1 }}>{icon}</Typography>
+                <Box sx={{ color: '#0066FF', mb: 1.5, display: 'flex' }}>{icon}</Box>
                 <Typography variant="body2" fontWeight={700} mb={0.5}>{title}</Typography>
                 <Typography variant="caption" color="text.secondary" sx={{ lineHeight: 1.5 }}>
                   {desc}

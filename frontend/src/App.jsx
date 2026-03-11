@@ -50,42 +50,30 @@ function NavBar() {
           mr={{ xs: 0, md: 4 }}
           sx={{ textDecoration: 'none', flexShrink: 0 }}
         >
-          {/* WINGAME Logo */}
-          <Box
-            sx={{
-              width: 34,
-              height: 34,
-              borderRadius: '8px',
-              background: 'linear-gradient(135deg, #0A1628, #0066FF)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 0 14px rgba(0,102,255,0.45)',
-              flexShrink: 0,
+          {/* WINGAME Logo — bare icon + divider + dual-tone wordmark */}
+          <img
+            src="/brand-assets/wingame-icon.svg"
+            alt="WINGAME"
+            style={{
+              width: 26, height: 24, display: 'block', flexShrink: 0,
+              filter: 'brightness(0) invert(1) drop-shadow(0 0 6px rgba(0,102,255,0.75))',
             }}
-          >
-            <img
-              src="/brand-assets/wingame-icon.svg"
-              alt=""
-              style={{ width: 24, height: 22, filter: 'brightness(0) invert(1)', display: 'block' }}
-            />
-          </Box>
+          />
+          <Box sx={{ width: '1px', height: 22, background: 'rgba(255,255,255,0.1)', mx: 1.2, flexShrink: 0 }} />
           <Box>
             <Typography
               variant="h6"
               sx={{
                 fontWeight: 900,
-                letterSpacing: '0.06em',
-                background: 'linear-gradient(90deg, #0066FF 0%, #00D4FF 60%, #00C853 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                fontSize: { xs: '0.95rem', md: '1.1rem' },
+                letterSpacing: '0.04em',
+                fontSize: { xs: '0.95rem', md: '1.05rem' },
                 lineHeight: 1.1,
               }}
             >
-              WINGAME
+              <Box component="span" sx={{ color: 'white' }}>WIN</Box>
+              <Box component="span" sx={{ color: '#0066FF' }}>GAME</Box>
             </Typography>
-            <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.55rem', letterSpacing: '0.14em', lineHeight: 1 }}>
+            <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.5rem', letterSpacing: '0.18em', lineHeight: 1 }}>
               AI SPORTS ANALYTICS
             </Typography>
           </Box>
@@ -169,28 +157,18 @@ function NavBar() {
       >
         <Box p={2.5}>
           <Box display="flex" alignItems="center" gap={1} mb={3}>
-            <Box sx={{
-              width: 28, height: 28, borderRadius: '7px',
-              background: 'linear-gradient(135deg, #0A1628, #0066FF)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              boxShadow: '0 0 10px rgba(0,102,255,0.4)',
-            }}>
-              <img
-                src="/brand-assets/wingame-icon.svg"
-                alt=""
-                style={{ width: 18, height: 16, filter: 'brightness(0) invert(1)', display: 'block' }}
-              />
-            </Box>
+            <img
+              src="/brand-assets/wingame-icon.svg"
+              alt=""
+              style={{ width: 22, height: 20, display: 'block', flexShrink: 0, filter: 'brightness(0) invert(1) drop-shadow(0 0 5px rgba(0,102,255,0.7))' }}
+            />
+            <Box sx={{ width: '1px', height: 18, background: 'rgba(255,255,255,0.1)', mx: 0.8, flexShrink: 0 }} />
             <Box>
-              <Typography variant="body2" sx={{
-                fontWeight: 900, letterSpacing: '0.06em',
-                background: 'linear-gradient(90deg, #0066FF, #00C853)',
-                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-                lineHeight: 1.1,
-              }}>
-                WINGAME
+              <Typography variant="body2" sx={{ fontWeight: 900, letterSpacing: '0.04em', lineHeight: 1.1 }}>
+                <Box component="span" sx={{ color: 'white' }}>WIN</Box>
+                <Box component="span" sx={{ color: '#0066FF' }}>GAME</Box>
               </Typography>
-              <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.5rem', letterSpacing: '0.12em' }}>
+              <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.48rem', letterSpacing: '0.16em' }}>
                 AI SPORTS ANALYTICS
               </Typography>
             </Box>

@@ -404,29 +404,21 @@ export default function Home() {
 
           {/* Brand logo row */}
           <Box display="flex" alignItems="center" justifyContent="center" gap={1.5} mb={4}>
-            <Box sx={{
-              width: 52, height: 52, borderRadius: '16px',
-              background: 'linear-gradient(135deg, #041830 0%, #0A2A5E 50%, #0066FF 100%)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              boxShadow: '0 0 32px rgba(0,102,255,0.55), 0 0 0 1px rgba(0,102,255,0.3)',
-              flexShrink: 0,
-            }}>
-              <img
-                src="/brand-assets/wingame-icon.svg"
-                alt="WIN GAME"
-                style={{ width: 34, height: 32, filter: 'brightness(0) invert(1)', display: 'block' }}
-              />
-            </Box>
+            <img
+              src="/brand-assets/wingame-icon.svg"
+              alt="WINGAME"
+              style={{
+                width: 40, height: 37, display: 'block', flexShrink: 0,
+                filter: 'brightness(0) invert(1) drop-shadow(0 0 10px rgba(0,102,255,0.9)) drop-shadow(0 0 20px rgba(0,102,255,0.5))',
+              }}
+            />
+            <Box sx={{ width: '1px', height: 28, background: 'rgba(255,255,255,0.12)', flexShrink: 0 }} />
             <Box textAlign="left">
-              <Typography sx={{
-                fontWeight: 900, letterSpacing: '0.1em', lineHeight: 1.1,
-                fontSize: '1.4rem',
-                background: 'linear-gradient(90deg, #4D9FFF 0%, #00D4FF 50%, #00C853 100%)',
-                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-              }}>
-                WINGAME
+              <Typography sx={{ fontWeight: 900, letterSpacing: '0.06em', lineHeight: 1.1, fontSize: '1.4rem' }}>
+                <Box component="span" sx={{ color: 'white' }}>WIN</Box>
+                <Box component="span" sx={{ color: '#0066FF' }}>GAME</Box>
               </Typography>
-              <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.55rem', letterSpacing: '0.2em' }}>
+              <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.52rem', letterSpacing: '0.2em' }}>
                 AI SPORTS ANALYTICS
               </Typography>
             </Box>
