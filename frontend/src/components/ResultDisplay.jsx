@@ -139,7 +139,7 @@ export default function ResultDisplay({ result }) {
   const confColor = CONF_COLOR[prediction.confidence_level] || '#666';
 
   const rawConfidence = Math.max(winner.home_win || 0, winner.draw || 0, winner.away_win || 0);
-  const displayConfidence = Math.min(rawConfidence + 15, 80);
+  const displayConfidence = Math.min(Math.round(rawConfidence * 1.19), 91);
 
   const probRows = sport_type === 'soccer'
     ? [

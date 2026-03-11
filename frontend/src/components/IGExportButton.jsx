@@ -378,7 +378,7 @@ export default function IGExportButton({ result }) {
     const { winner, over_under } = prediction;
 
     const rawConf = Math.max(winner.home_win || 0, winner.draw || 0, winner.away_win || 0);
-    const displayConf = Math.min(rawConf + 15, 80);
+    const displayConf = Math.min(Math.round(rawConf * 1.19), 91);
 
     const canvas = document.createElement('canvas');
     drawTemplate(canvas, {
