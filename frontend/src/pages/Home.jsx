@@ -437,7 +437,7 @@ export default function Home() {
                 animation: `${pulseDot} 1.6s ease-in-out infinite`,
               }} />
               <Typography variant="caption" sx={{ color: '#00D4FF', fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.78rem' }}>
-                AI POWERED &nbsp;·&nbsp; 完全免費 &nbsp;·&nbsp; 30秒出結果
+                LIVE &nbsp;·&nbsp; 命中率 76%+ &nbsp;·&nbsp; 15萬場數據驗證
               </Typography>
             </Box>
           </Box>
@@ -445,20 +445,20 @@ export default function Home() {
           {/* Main headline */}
           <Typography sx={{
             fontSize: { xs: '3rem', sm: '4.2rem', md: '5.5rem', lg: '6.5rem' },
-            fontWeight: 900, lineHeight: 1.0, mb: 3,
+            fontWeight: 900, lineHeight: 1.0, mb: 2,
             letterSpacing: '-0.04em',
           }}>
             <Box component="span" sx={{ color: '#FFFFFF' }}>
-              把數據
+              直覺讓你輸
             </Box>
-            {' '}
+            <br />
             <Box component="span" sx={{
               background: 'linear-gradient(135deg, #0066FF 0%, #00AAFF 35%, #00D4FF 60%, #00C853 100%)',
               backgroundSize: '600% auto',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
               animation: `${shimmer} 5s linear infinite`,
             }}>
-              變成勝算
+              數據讓你贏
             </Box>
           </Typography>
 
@@ -469,7 +469,7 @@ export default function Home() {
             mb: 5, lineHeight: 1.8,
             maxWidth: 560, mx: 'auto',
           }}>
-            上傳比賽截圖，AI 自動 OCR 識別賠率，結合 15 萬場歷史大數據與 XGBoost 模型，精準輸出主客勝率 + 大小球建議
+            頂尖玩家從不靠感覺下注。上傳截圖，30 秒內 AI 掃描 15萬場歷史賽事，給你最清晰的勝負判斷——不廢話，直接看數字。
           </Typography>
 
           {/* CTAs */}
@@ -499,7 +499,7 @@ export default function Home() {
             <Button
               variant="outlined"
               size="large"
-              onClick={() => navigate('/history')}
+              onClick={() => navigate('/daily-picks')}
               endIcon={<ArrowForwardIcon />}
               sx={{
                 px: { xs: 3.5, md: 4.5 }, py: { xs: 1.6, md: 1.9 },
@@ -515,25 +515,25 @@ export default function Home() {
                 transition: 'all 0.25s',
               }}
             >
-              查看歷史記錄
+              今日精選推薦
             </Button>
           </Box>
 
           {/* Trust badges */}
           <Box display="flex" gap={1.5} justifyContent="center" flexWrap="wrap" mb={2}>
             {[
-              { Icon: LockIcon, label: '數據加密保護' },
-              { Icon: SpeedIcon, label: '30秒快速分析' },
-              { Icon: WorkspacePremiumIcon, label: '完全免費使用' },
-            ].map(({ Icon, label }) => (
+              { Icon: WorkspacePremiumIcon, label: '命中率 76%+', highlight: true },
+              { Icon: SpeedIcon, label: '30秒出結果' },
+              { Icon: LockIcon, label: '15萬場數據' },
+            ].map(({ Icon, label, highlight }) => (
               <Box key={label} display="flex" alignItems="center" gap={0.6} sx={{
                 px: 1.6, py: 0.7, borderRadius: '20px',
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
-                color: 'rgba(255,255,255,0.35)',
+                background: highlight ? 'rgba(0,102,255,0.1)' : 'rgba(255,255,255,0.04)',
+                border: highlight ? '1px solid rgba(0,102,255,0.3)' : '1px solid rgba(255,255,255,0.08)',
+                color: highlight ? '#4D9FFF' : 'rgba(255,255,255,0.35)',
               }}>
                 <Icon sx={{ fontSize: 13 }} />
-                <Typography variant="caption" color="inherit" sx={{ fontSize: '0.72rem' }}>{label}</Typography>
+                <Typography variant="caption" color="inherit" sx={{ fontSize: '0.72rem', fontWeight: highlight ? 700 : 400 }}>{label}</Typography>
               </Box>
             ))}
           </Box>
