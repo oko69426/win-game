@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import {
-  Box, Typography, Button, LinearProgress, Alert,
+  Box, Typography, Button, LinearProgress,
   ToggleButton, ToggleButtonGroup, Chip
 } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';

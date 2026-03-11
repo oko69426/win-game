@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {
-  Box, Typography, Grid, Chip, CircularProgress, Alert,
+  Box, Typography, Grid, CircularProgress, Alert,
   Divider, IconButton, Tooltip,
 } from '@mui/material';
 import WhatshotIcon from '@mui/icons-material/Whatshot';

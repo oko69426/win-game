@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Box, Typography, Grid, Chip, CircularProgress, Alert,
+  Box, Typography, Grid, CircularProgress, Alert,
   Divider, IconButton, Tooltip
 } from '@mui/material';
 import HistoryIcon from '@mui/icons-material/History';
@@ -135,10 +135,6 @@ export default function History() {
           const SportIcon = rec.sport_type === 'baseball' ? SportsBaseballIcon : SportsSoccerIcon;
 
           const maxProb = Math.max(winner.home_win || 0, winner.away_win || 0, winner.draw || 0);
-          let topLabel = '';
-          if (winner.home_win === maxProb) topLabel = '主勝';
-          else if (winner.away_win === maxProb) topLabel = '客勝';
-          else topLabel = '平局';
 
           return (
             <Grid item xs={12} sm={6} md={4} key={rec.id}>

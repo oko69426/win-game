@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Typography, Grid, Divider, Chip } from '@mui/material';
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import StorageIcon from '@mui/icons-material/Storage';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import BarChartIcon from '@mui/icons-material/BarChart';
-import BoltIcon from '@mui/icons-material/Bolt';
-import ShieldIcon from '@mui/icons-material/Shield';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import WarningIcon from '@mui/icons-material/Warning';
@@ -15,9 +12,7 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 /* ── Constants ── */
 const NEON = '#0066FF';
-const NEON2 = '#00D4FF';
 const BG = '#0A1628';
-const CARD_BG = '#141F2E';
 
 /* ── Pipeline Steps ── */
 const PIPELINE_STEPS = [

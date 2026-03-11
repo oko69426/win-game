@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Typography, Button, Grid, Divider, Chip } from '@mui/material';
+import { Box, Typography, Button, Grid, Divider } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import SportsBaseballIcon from '@mui/icons-material/SportsBaseball';
-import VerifiedIcon from '@mui/icons-material/Verified';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import BoltIcon from '@mui/icons-material/Bolt';
@@ -57,15 +56,6 @@ const scanSlide = keyframes`
   5%   { opacity: 0.7; }
   95%  { opacity: 0.7; }
   100% { top: 100%; opacity: 0; }
-`;
-const orbPulse = keyframes`
-  0%,100% { opacity: 0.6; transform: scale(1); }
-  50%      { opacity: 1;   transform: scale(1.08); }
-`;
-const borderRotate = keyframes`
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 `;
 
 /* ─── Count-up hook ─── */

@@ -31,28 +31,6 @@ const RISK_CONFIG = {
   '低': { color: '#00C853', bg: 'rgba(0,200,83,0.1)', border: 'rgba(0,200,83,0.3)' },
 };
 
-/* ── 信心儀表圓圈 ── */
-function ConfidenceMeter({ value, color = '#00D4FF', size = 120 }) {
-  const r = (size - 16) / 2;
-  const circ = 2 * Math.PI * r;
-  const dash = (value / 100) * circ;
-  return (
-    <Box display="flex" flexDirection="column" alignItems="center" gap={0.5}>
-      <Box position="relative" width={size} height={size}>
-        <svg width={size} height={size} style={{ transform: 'rotate(-90deg)' }}>
-          <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth={8}/>
-          <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={color} strokeWidth={8}
-            strokeDasharray={circ} strokeDashoffset={circ - dash} strokeLinecap="round"
-            style={{ filter: `drop-shadow(0 0 8px ${color})`, transition: 'stroke-dashoffset 1s ease' }}/>
-        </svg>
-        <Box position="absolute" top="50%" left="50%" sx={{ transform: 'translate(-50%,-50%)', textAlign: 'center' }}>
-          <Typography fontWeight={900} sx={{ color, fontSize: '1.5rem', lineHeight: 1 }}>{value}%</Typography>
-        </Box>
-      </Box>
-      <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.68rem' }}>自信值</Typography>
-    </Box>
-  );
-}
 
 /* ── 近期戰績徽章 ── */
 function FormBadges({ form }) {
