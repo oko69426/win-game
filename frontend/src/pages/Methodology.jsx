@@ -9,7 +9,6 @@ import WarningIcon from '@mui/icons-material/Warning';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import ShieldIcon from '@mui/icons-material/Shield';
 
 /* ── Pipeline Steps ── */
 const PIPELINE_STEPS = [
