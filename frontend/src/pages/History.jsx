@@ -134,8 +134,6 @@ export default function History() {
           const winner = pred.winner || {};
           const SportIcon = rec.sport_type === 'baseball' ? SportsBaseballIcon : SportsSoccerIcon;
 
-          const maxProb = Math.max(winner.home_win || 0, winner.away_win || 0, winner.draw || 0);
-
           return (
             <Grid item xs={12} sm={6} md={4} key={rec.id}>
               <Box
