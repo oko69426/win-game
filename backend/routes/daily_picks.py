@@ -6,7 +6,7 @@ GET /api/daily-picks
 from flask import Blueprint, jsonify
 import sys
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 import requests
 
@@ -46,10 +46,12 @@ def get_daily_picks():
             'generated_at': datetime.now(timezone.utc).isoformat(),
         })
 
-    today = datetime.now().strftime('%Y-%m-%d')
-    headers = {'X-Auth-Token': FOOTBALL_DATA_API_KEY}
+    today     = datetime.now()
+    date_from = today.strftime('%Y-%m-%d')
+    date_to   = (today + timedelta(days=3)).strftime('%Y-%m-%d')
+    headers   = {'X-Auth-Token': FOOTBALL_DATA_API_KEY}
 
-    url = f"{FOOTBALL_DATA_BASE}/matches?dateFrom={today}&dateTo={today}&status=SCHEDULED"
+    url = f"{FOOTBALL_DATA_BASE}/matches?dateFrom={date_from}&dateTo={date_to}&status=SCHEDULED"
 
     try:
         resp = requests.get(url, headers=headers, timeout=10)
@@ -120,13 +122,19 @@ def get_daily_picks():
 
     # 按信心度排序，取前 5
     picks.sort(key=lambda x: x['confidence_score'], reverse=True)
+    final_picks = picks[:5]
+
+    # 若 API 有賽事但沒過濾到 → fallback demo
+    if not final_picks:
+        final_picks = _get_demo_picks()
 
     return jsonify({
         'success': True,
-        'demo': False,
-        'date': today,
+        'demo': len(picks) == 0,
+        'date': date_from,
+        'date_range': f'{date_from} ~ {date_to}',
         'total_matches': len(matches),
-        'picks': picks[:5],
+        'picks': final_picks,
         'generated_at': datetime.now(timezone.utc).isoformat(),
     })
 
