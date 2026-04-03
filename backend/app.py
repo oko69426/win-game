@@ -15,6 +15,7 @@ from routes.health import health_bp
 from routes.history import history_bp
 from routes.upload import upload_bp
 from routes.daily_picks import daily_picks_bp
+from routes.live_analysis import live_analysis_bp
 from utils.db import init_db
 from config import HOST, PORT, DEBUG, UPLOAD_FOLDER
 
@@ -41,6 +42,7 @@ def create_app():
     app.register_blueprint(history_bp, url_prefix='/api')
     app.register_blueprint(upload_bp, url_prefix='/api')
     app.register_blueprint(daily_picks_bp, url_prefix='/api')
+    app.register_blueprint(live_analysis_bp, url_prefix='/api')
 
     # Catch-all: 將非 /api/ 路徑交給 React Router 處理
     @app.route('/', defaults={'path': ''})

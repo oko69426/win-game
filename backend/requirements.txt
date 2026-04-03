@@ -23,3 +23,13 @@ requests==2.31.0
 
 # 環境變數
 python-dotenv==1.0.1
+
+# 賽事即時分析 (Phase 1) — 選用，未安裝時自動切換 demo 模式
+yt-dlp
+supervision
+ultralytics
+gdown
+transformers
+sentencepiece
+protobuf
+git+https://github.com/roboflow/sports.git

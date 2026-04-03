@@ -13,6 +13,7 @@ import BoltIcon from '@mui/icons-material/Bolt';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import ScienceIcon from '@mui/icons-material/Science';
 import MenuIcon from '@mui/icons-material/Menu';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
 
 import theme from './theme';
 import Home from './pages/Home';
@@ -23,12 +24,14 @@ import Footer from './components/Footer';
 const Performance = lazy(() => import('./pages/Performance'));
 const Methodology = lazy(() => import('./pages/Methodology'));
 const DailyPicks = lazy(() => import('./pages/DailyPicks'));
+const LiveAnalysis = lazy(() => import('./pages/LiveAnalysis'));
 
 const NAV_ITEMS = [
   { path: '/', label: '首頁', icon: <HomeIcon sx={{ fontSize: 18 }} /> },
   { path: '/analysis', label: 'AI 分析', icon: <CameraAltIcon sx={{ fontSize: 18 }} /> },
-  { path: '/history', label: '歷史記錄', icon: <HistoryIcon sx={{ fontSize: 18 }} /> },
+  { path: '/live', label: '即時分析', icon: <LiveTvIcon sx={{ fontSize: 18 }} />, badge: 'NEW' },
   { path: '/daily-picks', label: '每日精選', icon: <BoltIcon sx={{ fontSize: 18 }} /> },
+  { path: '/history', label: '歷史記錄', icon: <HistoryIcon sx={{ fontSize: 18 }} /> },
   { path: '/performance', label: '預測績效', icon: <AssessmentIcon sx={{ fontSize: 18 }} /> },
   { path: '/methodology', label: '方法論', icon: <ScienceIcon sx={{ fontSize: 18 }} /> },
 ];
@@ -81,7 +84,7 @@ function NavBar() {
 
         {/* Desktop Nav Links */}
         <Box display={{ xs: 'none', lg: 'flex' }} gap={0.5} flexGrow={1}>
-          {NAV_ITEMS.map(({ path, label, icon }) => {
+          {NAV_ITEMS.map(({ path, label, icon, badge }) => {
             const active = location.pathname === path;
             return (
               <Button
@@ -104,9 +107,20 @@ function NavBar() {
                     border: '1px solid rgba(0,102,255,0.2)',
                   },
                   transition: 'all 0.2s',
+                  position: 'relative',
                 }}
               >
                 {label}
+                {badge && (
+                  <Box component="span" sx={{
+                    ml: 0.8, px: 0.6, py: 0.1, borderRadius: '4px',
+                    background: 'linear-gradient(90deg, #F43B30, #FF6B35)',
+                    color: '#fff', fontSize: '0.55rem', fontWeight: 800,
+                    letterSpacing: '0.05em', lineHeight: 1.6,
+                  }}>
+                    {badge}
+                  </Box>
+                )}
               </Button>
             );
           })}
@@ -236,6 +250,12 @@ export default function App() {
                     <Container maxWidth="lg" sx={{ py: { xs: 3, md: 5 }, px: { xs: 2, md: 3 } }}>
                       <History />
                     </Container>
+                  }
+                />
+                <Route
+                  path="/live"
+                  element={
+                    <LiveAnalysis />
                   }
                 />
                 <Route
